@@ -16,9 +16,9 @@ public class DemoApplication {
 	@Bean
 	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
 	    return builder.routes()
-	      .route("r1", r -> r.host("**zuul-gate.**")
+	      .route("r1", r -> r.host("**cloud-gate.**")
 	        .and()
-	        .uri("https://spring-wine.herokuapp.com/"))
+	        .uri("https://www.google.com/"))
 	    .build();
 	}
 }
