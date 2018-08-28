@@ -18,7 +18,7 @@ public class DemoApplication {
 	    return builder.routes()
 	      .route("r1", r -> r.host("**cloud-gate.**")
 	        .and()
-	        .uri("https://www.google.com/"))
+	        .uri("https://spring-wine.herokuapp.com/"))
 	    .build();
 	}
 }
