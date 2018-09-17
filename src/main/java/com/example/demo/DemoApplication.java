@@ -16,7 +16,7 @@ public class DemoApplication {
 	@Bean
 	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
-				.route(r -> r.alwaysTrue().filters(f -> f.rewritePath("(?spring-wine.*)", "cloud-gate"))
+				.route(r -> r.alwaysTrue().filters(f -> f.rewritePath("spring-wine", "cloud-gate"))
 						.uri("https://spring-wine.herokuapp.com").id("rewritepath_route"))
 				.build();
 	}
