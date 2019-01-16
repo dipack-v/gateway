@@ -38,7 +38,9 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.POST, jwtConfig.getUri()).permitAll()
 				// must be an admin if trying to access admin area (authentication is also
 				// required here)
-				.antMatchers("/wines/**").hasRole("ADMIN")
+				.antMatchers(HttpMethod.POST, "/wines/**").hasRole("ADMIN")
+				.antMatchers(HttpMethod.PUT, "/wines/**").hasRole("ADMIN")
+				.antMatchers(HttpMethod.DELETE, "/wines/**").hasRole("ADMIN")
 				// Any other request must be authenticated
 				.anyRequest().authenticated();
 	}
